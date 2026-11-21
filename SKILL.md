@@ -24,11 +24,13 @@ python3 <skill>/scripts/paso0.py
 Revisa Python 3.9+, Playwright, el navegador Chromium de Playwright, Pillow y ffmpeg (este último solo para videos). Si falta algo, **explícale a la persona en una frase qué es y para qué sirve, y pide permiso antes de instalar nada**. Con su sí: `python3 <skill>/scripts/paso0.py --instalar` (instala solo lo que falta: `pip install --user playwright pillow` y `python3 -m playwright install chromium`; para ffmpeg da el comando de su sistema, no lo instala solo). Si dice que no, explica qué partes no van a funcionar y sigue con lo que sí.
 
 **La mini guía (solo se ofrece una vez).** Al empezar, revisa si existe `~/.dakexplica/dak-revision-movil.json`:
-- **Si no existe**, es la primera vez. Pregunta una sola vez, con estas palabras:
-  > "¿Quieres que te enseñe rápido a usarla y sacarle el mayor provecho? Son unos 5 min, mientras revisamos tu primera página.
-  > Si prefieres ir directo, está perfecto: puedes abrir la guía cuando quieras, solo dime «ábreme la guía»."
+- **Si no existe**, es la primera vez (pasa igual si la instalaron con el mensaje de la ficha, con el comando a secas o si te piden algo directo como «revisa mi página»). Antes de cualquier otra cosa, ofrécela **con botones y todo lo importante dentro de la pregunta** (en la app, el texto previo a un botón se resume):
+  - Pregunta: "Es la primera vez que usas Revisión en 15 pantallas. ¿Quieres que te enseñe rápido a usarla y sacarle el mayor provecho? Son unos 5 min, mientras revisamos tu primera página."
+  - **Sí, enséñame (5 min)** — "3 lecciones cortas con tu página o con una de ejemplo"
+  - **No, úsala directo** — "hago lo que me pediste; la guía la abres cuando quieras con «ábreme la guía»"
+  - Si no existe la herramienta de botones, el mismo texto con "responde 1 o 2".
 
-  Luego crea el archivo con `{"guia_ofrecida": true}` (crea la carpeta si hace falta). Si dice que sí, abre `guia/leccion-1.md` y síguela. **Tu primer mensaje de la guía es siempre la bienvenida** (banner + "¡Hola, [nombre]! Bienvenido a la guía" + nota de @dakexplica), y con ella **terminas el turno** (en la app, el texto previo a un botón se resume en una línea); nunca narres lo que haces ("Llevo la revisión…", "ya confirmé…").
+  Luego crea el archivo con `{"guia_ofrecida": true}` (crea la carpeta si hace falta). Con **Sí**: abre `guia/leccion-1.md` y síguela (si ya te había dado su página o pedido algo, úsalo en la guía en vez de volver a preguntarlo). Con **No**: haz directo lo que pidió; si solo instaló, dile en una línea qué escribir para usarla («Usando la skill dak-revision-movil, revisa mi página en los 15 dispositivos»).
 - **Si existe**, no vuelvas a preguntar: haz el trabajo directo.
 - **En la app de Claude** (sin archivos entre chats) la pregunta solo sale cuando la persona instala la skill o escribe el mensaje de prueba de la ficha. Después no vuelve a salir sola.
 - Frases que abren la guía siempre: «ábreme la guía», «empieza la guía», «quiero la guía» (desde cero), «retoma la guía» (donde se quedó, en `~/.dakexplica/dak-revision-movil.json`), «guía lección 2» (una suelta), «sal de la guía» (volver al uso normal).
