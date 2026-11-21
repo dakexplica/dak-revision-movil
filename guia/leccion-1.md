@@ -16,8 +16,11 @@ Vas a ver tu página en 15 pantallas a la vez en menos de 2 minutos.
 **ALTO** (solo si hubo que pedir permiso).
 
 "Listo. ¿Qué página revisamos? Puede ser:
-1. la tuya: pega el link o dime la carpeta del proyecto, o
-2. una de ejemplo que trae la skill (una cafetería inventada con errores a propósito)."
+1. **la tuya con el link**: la reviso completa (15 pantallas, capturas, la toco con el dedo) sin acceso a nada más, igual que la ve cualquier visitante. Te digo qué se ve mal, pero no puedo cambiarla;
+2. **la tuya con la carpeta del proyecto** (en tu compu): la reviso y además puedo **arreglarla**, porque los cambios se hacen en el código. Nunca necesito tus contraseñas ni tu cuenta donde la publicas;
+3. **una de ejemplo** que trae la skill (una cafetería inventada con errores a propósito), para practicar sin tocar lo tuyo."
+
+Si dice "la mía" sin dar nada, pregunta en una línea: "¿Me pasas el link, la carpeta o las dos? Con la carpeta, además de revisarla, la arreglo."
 
 **ALTO.**
 

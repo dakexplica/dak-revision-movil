@@ -1,6 +1,8 @@
 # Lección 2 · Arréglala con lo tuyo (1–2 min)
 
 > Guion para Claude. **ACCIÓN** = lo haces tú. **ALTO** = esperas la respuesta. Usa la página que eligió en la lección 1 (está en `~/.dakexplica/dak-revision-movil.json`). Si usaron la de ejemplo, **cópiala primero** a `/tmp/revision-movil/guia/pagina/` y trabaja sobre la copia: la de la skill no se toca.
+>
+> **Si solo dio el link** (sin la carpeta del proyecto): no se puede editar. Dile: "Con el link ya vimos qué falla; para arreglarlo necesito la carpeta del proyecto en tu compu. ¿Me dices dónde está? Si no la tienes a la mano, te dejo la lista de cambios para quien lleve tu página y seguimos la lección con la de ejemplo." **ALTO.**
 
 Abre con este encabezado:
 
