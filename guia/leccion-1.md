@@ -48,6 +48,7 @@ Con **carpeta**: pide la ruta con un ejemplo genérico (nunca una ruta real de q
 - ✓/✗ encontré la página (el `index.html`, o el proyecto Next/Astro/Vite/Shopify y cómo se abre: `references/stacks.md`);
 - ✓/✗ puedo guardar cambios ahí (crea y borra un archivo de prueba);
 - si tiene git: ¿hay cambios sin guardar? Si sí, **BOTONES** "¿Guardo un respaldo antes de tocar nada? · Sí (recomendado) · No, sigue".
+- **Respaldo siempre que vayas a cambiar su página** (con o sin git): copia lo que vas a tocar a `<su carpeta>/.respaldo-dak-revision-movil/<fecha-hora>/` y dile la ruta en una línea ("Guardé una copia de tu página aquí: …"). Nunca en una carpeta temporal de Claude: se borra y la persona no la encuentra.
 - si la página tiene login: avisa que se abre una ventana para que entre la persona (nunca escribes su contraseña).
 Si algo falla, dile qué y cómo resolverlo; si no se puede, sigue solo con el link.
 
@@ -62,7 +63,7 @@ Si algo falla, dile qué y cómo resolverlo; si no se puede, sigue solo con el l
 "Todo listo, [nombre]. Ahora pídemelo tú, una sola vez, para que veas lo fácil que es. Copia y pega esto:"
 
 ```
-Usando la skill dak-revision-movil, revisa mi página en los 15 dispositivos
+Usando la skill dak-revision-movil, revisa mi página
 ```
 
 "Así se lo pides siempre que quieras revisar una página, aunque no estés en la guía."

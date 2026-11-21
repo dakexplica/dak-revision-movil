@@ -48,7 +48,7 @@ Máximo ~4 viñetas en Resultado. Nada de detalles técnicos del script (p. ej. 
 > **De aquí en adelante ya no necesitas la guía.** Todo lo que hicimos en estas 3 lecciones, la herramienta lo hace **sola, sin que le tengas que decir cada paso**. Cuando quieras revisar una página, solo pega esto:
 
 ```
-Usando la skill dak-revision-movil, revisa mi página en los 15 dispositivos
+Usando la skill dak-revision-movil, revisa mi página
 ```
 
 > Esta herramienta es de **@dakexplica**: sígueme para la siguiente. Las demás están gratis en el link de mi perfil. 🙌

@@ -30,7 +30,7 @@ Revisa Python 3.9+, Playwright, el navegador Chromium de Playwright, Pillow y ff
   - **No, úsala directo** — "hago lo que me pediste; la guía la abres cuando quieras con «ábreme la guía»"
   - Si no existe la herramienta de botones, el mismo texto con "responde 1 o 2".
 
-  Luego crea el archivo con `{"guia_ofrecida": true}` (crea la carpeta si hace falta). Con **Sí**: abre `guia/leccion-1.md` y síguela (si ya te había dado su página o pedido algo, úsalo en la guía en vez de volver a preguntarlo). Con **No**: haz directo lo que pidió; si solo instaló, dile en una línea qué escribir para usarla («Usando la skill dak-revision-movil, revisa mi página en los 15 dispositivos»).
+  Luego crea el archivo con `{"guia_ofrecida": true}` (crea la carpeta si hace falta). Con **Sí**: abre `guia/leccion-1.md` y síguela (si ya te había dado su página o pedido algo, úsalo en la guía en vez de volver a preguntarlo). Con **No**: haz directo lo que pidió; si solo instaló, dile en una línea qué escribir para usarla («Usando la skill dak-revision-movil, revisa mi página»).
 - **Si existe**, no vuelvas a preguntar: haz el trabajo directo.
 - **En la app de Claude** (sin archivos entre chats) la pregunta solo sale cuando la persona instala la skill o escribe el mensaje de prueba de la ficha. Después no vuelve a salir sola.
 - Frases que abren la guía siempre: «ábreme la guía», «empieza la guía», «quiero la guía» (desde cero), «retoma la guía» (donde se quedó, en `~/.dakexplica/dak-revision-movil.json`), «guía lección 2» (una suelta), «sal de la guía» (volver al uso normal).
