@@ -1,13 +1,21 @@
 # Lección 3 · Sácale más (1–2 min)
 
-> Guion para Claude. **ACCIÓN** = lo haces tú. **ALTO** = esperas la respuesta.
+> Guion para Claude. Antes, lee `guia/estilo.md`. Retoma nombre y página de `~/.dakexplica/dak-revision-movil.json`. **ACCIÓN** = lo haces tú. **ALTO** = esperas la respuesta.
 
-Abre con este encabezado:
+**ACCIÓN:** muestra este banner en un bloque de código:
 
-**Guía · 3 de 3 · Sácale más**
-Que no solo se vea bien: que funcione con el dedo. Y cómo usarla en todo lo que hagas.
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   REVISIÓN EN 15 PANTALLAS  ·  guía 3 de 3
+   Que funcione con el dedo (y usarla en todo)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+"Última, [nombre], y es la que más me gusta."
 
 "Que se vea bien no basta: también tiene que funcionar. Ahora la uso como una persona: bajo con el dedo hasta el final y toco el botón principal."
+
+"Escríbeme: **«Úsala como una persona: baja hasta el final y toca el botón principal»**." **ALTO.**
 
 **ACCIÓN:** escribe un `pasos.json` corto para su página (o la de ejemplo) y córrelo en el grupo rápido:
 
@@ -37,10 +45,12 @@ Cuéntale el resultado en una frase por dispositivo (✓ o qué falló y por qu�
 
 Cierra con:
 
-**Lo que aprendiste**
+**Lo que lograste, [nombre]**
 - Revisar en 15 pantallas, mirar y tocar.
 - Arreglar lo obvio y decidir tú lo que cambia el diseño.
 - Usarla mientras construyes, con videos y con capturas.
+
+Despídete con cariño y energía, retomando lo de la lección 1 ("Tu [tienda] ya se ve bien en los 15, y ahora sabes revisarla tú cuando cambies algo").
 
 "Listo, ya la dominas. Si quieres repetir algo: «guía lección 1», «guía lección 2» o «guía lección 3».
 Esta herramienta es de **@dakexplica**: sígueme para la siguiente. Las demás están gratis en el link de mi perfil."

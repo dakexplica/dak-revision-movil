@@ -32,7 +32,7 @@ Revisa Python 3.9+, Playwright, el navegador Chromium de Playwright, Pillow y ff
 - **Si existe**, no vuelvas a preguntar: haz el trabajo directo.
 - **En la app de Claude** (sin archivos entre chats) la pregunta solo sale cuando la persona instala la skill o escribe el mensaje de prueba de la ficha. Después no vuelve a salir sola.
 - Frases que abren la guía siempre: «ábreme la guía», «empieza la guía», «quiero la guía» (desde cero), «retoma la guía» (donde se quedó, en `~/.dakexplica/dak-revision-movil.json`), «guía lección 2» (una suelta), «sal de la guía» (volver al uso normal).
-- La guía son 3 lecciones cortas en `guia/`. Cada una es un guion para Claude (lo que dices, **ACCIÓN** y **ALTO**). Nunca sigas sin que la persona conteste.
+- La guía son 3 lecciones cortas en `guia/`. Cada una es un guion para Claude (lo que dices, **ACCIÓN** y **ALTO**). **Antes de cada lección lee `guia/estilo.md`**: se da en vivo (saludo con su nombre, reaccionas a lo que dice, seguimiento entre lecciones), nunca seca. Nunca sigas sin que la persona conteste.
 
 ## La regla de oro: medir, MIRAR, tocar, arreglar, volver a medir
 
@@ -188,6 +188,7 @@ Si un aviso viene del tema o de la plantilla base y no de lo que se construyó, 
 | `scripts/safari.py` | Primera pantalla en Safari REAL (simuladores de iPhone/iPad, Mac con Xcode) |
 | `scripts/sesion.py` | Guardar la sesión de una página con login (la persona entra ella misma) para `--estado` |
 | `scripts/dispositivos.py` | La lista de dispositivos (añadir uno = una línea) |
+| `guia/estilo.md` | Cómo se da la guía (en vivo, cercana, con seguimiento) |
 | `guia/leccion-1.md` … `leccion-3.md` | La mini guía interactiva (~5 min) |
 | `guia/ejemplo/` | Página de ejemplo con errores, para la guía si la persona no tiene una a la mano |
 | `references/checklist.md` | Qué mirar y qué probar, por tipo de dispositivo |
