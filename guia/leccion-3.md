@@ -1,10 +1,24 @@
 # Lección 3 · Que funcione con el dedo (~2 min)
 
-> Guion para Claude. Antes lee `guia/estilo.md` y retoma `nombre` y `pagina` de `~/.dakexplica/dak-revision-movil.json`. **ACCIÓN** = lo haces tú. **BOTONES** = `AskUserQuestion`. **ALTO** = esperas.
+> Guion para Claude. Antes lee `guia/estilo.md` y retoma `nombre`, `pagina` y `objetivo` de `~/.dakexplica/dak-revision-movil.json`. **ACCIÓN** = lo haces tú. **ALTO** = esperas.
+>
+> **Esta lección no pregunta nada.** La herramienta siempre prueba TODO; la persona nunca tiene que elegir qué revisar. Cuando diga «sigue», haces la prueba completa en silencio y al final mandas UN solo mensaje corto (pasos 2 y 3) que cierra el turno.
 
-## 1 · Abre (un solo mensaje que cierra el turno)
+## 1 · Probar todo con el dedo (en silencio)
 
-**ACCIÓN:** banner:
+**ACCIÓN:** lee la página y arma un `pasos.json` con **todo lo que una persona haría** en ella (no solo un botón):
+- `{"recorrer": true}` — bajar hasta el final (detecta scroll atorado);
+- tocar el menú (si hay botón de menú, ábrelo y ciérralo) y el botón o los 2–3 botones principales (`tocar_texto`);
+- si hay carrusel: `deslizar`; si hay formulario: `escribir` en un campo (abre el teclado) y revisa que el botón de enviar siga visible;
+- `{"rotar": true}` — girar el celular.
+
+```bash
+python3 <skill>/scripts/tocar.py <la página> --pasos pasos.json --dispositivos rapido --salida /tmp/revision-movil/guia/tocar
+```
+
+Revisa también a dónde llevan los botones (si apuntan a `#` o a nada, es un hallazgo).
+
+## 2 · El mensaje (uno solo, corto, cierra el turno)
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -13,84 +27,32 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-"Última, [nombre]. [Retoma su `objetivo` en una frase: "Me dijiste que te preocupaban los botones: aquí es donde lo comprobamos"]. Que se vea bien no basta: también tiene que funcionar con el dedo. Ahí es donde casi todas fallan."
+> **Última, [nombre].** Que se vea bien no basta: también tiene que funcionar con el dedo. [Retoma su `objetivo` en media frase.]
+> Ya la usé como una persona en iPhone, Android, iPad y Mac: bajé hasta el final, toqué el menú y los botones[, llené el formulario] y giré el celular.
+>
+> **Resultado**
+> - ✓ [lo que funcionó, agrupado en 1 línea: "el scroll, el menú y girar el celular funcionan en los 4"]
+> - ✗ [cada falla en 1 línea, como la vive la gente: "«Agenda una llamada» no lleva a ningún lado: alguien lo toca y se va"]
+>
+> [Si es una página de práctica o le faltan cosas, dilo en una línea: "Como es una página de prueba, sus botones no llevan a nada; en una página real aquí pondrías tu WhatsApp o tu calendario."]
 
-Cierra el mensaje con la pregunta como **lista numerada** · "¿Qué pruebo como si fuera una persona? Responde 1 o 2."
-1. **Todo: bajar hasta el final, tocar el botón principal y girar el celular (recomendado)**
-2. **Solo bajar hasta el final**
+Máximo ~4 viñetas en Resultado. Nada de detalles técnicos del script (p. ej. "no subió en el iPad"): si no es un problema para la persona, no se menciona.
 
-**ALTO** (fin del turno).
+## 3 · Cierre (en el mismo mensaje)
 
-## 2 · Probar con el dedo
-
-**Antes, avisa:** "Va. Ahora la uso como una persona en 4 aparatos: [lo que eligió]. Tarda unos segundos."
-
-**ACCIÓN:** arma un `pasos.json` corto con lo que eligió y córrelo en los 4 rápidos:
-
-```json
-[{"recorrer": true}, {"tocar_texto": "<botón principal>"}, {"rotar": true}]
-```
-
-```bash
-python3 <skill>/scripts/tocar.py <la página> --pasos pasos.json --dispositivos rapido --salida /tmp/revision-movil/guia/tocar
-```
-
-**Después, el mensaje (obligatorio):** "Listo, la probé con el dedo. Esto pasó:" — va en el mismo mensaje que el paso 3 ("Así la usas") y ese mensaje cierra con la pregunta de mejoras como lista numerada ("responde 1, 2 o 3"), no con botones, para que nada se resuma.
-
-**Resultado** (una línea por aparato, ✓ o qué falló y por qué: "tapado por el banner", "el scroll se atora").
-
-Si es la de ejemplo: "Aquí los botones son de mentira; en tu página real esta prueba también te dice si un botón quedó tapado o si el scroll se atora a media página. Eso nadie lo ve desde la compu."
-
-## 3 · Así la usas de aquí en adelante (lo más importante)
-
-"Todo lo que hicimos paso a paso, la herramienta lo hace **sola**. No tienes que pedirle cada cosa. Le dices una frase y ella:
-1. abre tu página en las 15 pantallas,
-2. mira las capturas (no solo los números),
-3. la prueba con el dedo,
-4. arregla lo obvio,
-5. te pregunta lo que cambia tu diseño,
-6. y te enseña el antes y después."
-
-**Frases para usarla** (cada una en su bloque para copiar, siempre con el nombre de la skill para que Claude la use seguro):
+> **Lo que lograste**
+> - Viste tu página como la ve todo el mundo.
+> - La arreglaste sin perder tu diseño.
+> - Comprobaste que funciona con el dedo.
+>
+> **De aquí en adelante ya no necesitas la guía.** Todo lo que hicimos en estas 3 lecciones, la herramienta lo hace **sola, sin que le tengas que decir cada paso**. Cuando quieras revisar una página, solo pega esto:
 
 ```
 Usando la skill dak-revision-movil, revisa mi página en los 15 dispositivos
 ```
-→ lo de arriba, completo
 
-```
-Usando la skill dak-revision-movil, revísalo antes de terminar
-```
-→ mientras construyes algo
+> Esta herramienta es de **@dakexplica**: sígueme para la siguiente. Las demás están gratis en el link de mi perfil. 🙌
 
-```
-Usando la skill dak-revision-movil, revisa este video para Reels
-```
-→ formato, lo que tapa la app y el peso
+**Una sola frase para copiar, no una lista.** Nada de "Para que no te pase", ni lista de mejoras, ni otros comandos: el cierre tiene que sentirse como una despedida, no como un manual. (Si la persona pregunta qué más puede hacer, ahí sí le cuentas lo de videos, capturas y el Safari real.)
 
-```
-Usando la skill dak-revision-movil, esto se ve mal en mi celular, arréglalo
-```
-→ junto con una captura de tu celular
-
-**Para que no te pase:**
-- Revisa también las otras páginas, no solo la portada ("revisa también /contacto").
-- Después de publicar, revisa el link real ("revísalo en el link de producción").
-
-**Pregunta al final del mensaje (lista numerada, no botones)** · "¿Quieres alguna mejora opcional? Responde 1, 2 o 3" (solo las que no tenga; pregunta antes de instalar). **ALTO** (fin del turno).
-- **Safari de verdad** — en Mac con Xcode: el iPhone y el iPad del Simulador con el Safari real
-- **Revisar videos** — necesita ffmpeg
-- **No, así está bien**
-
-## 4 · Cierre
-
-**Lo que lograste, [nombre]**
-- Ver tu página como la ve todo el mundo.
-- Arreglarla sin perder tu diseño.
-- Comprobar que funcione con el dedo.
-
-Despídete con energía y retoma su `objetivo` y su página de la lección 1 ("Tu [tienda] ya se ve bien en todos lados, y ahora con una frase la revisas cada vez que cambies algo").
-
-"Esta herramienta es de **@dakexplica**: sígueme para la siguiente. Las demás están gratis en el link de mi perfil. ¿Quieres repetir algo? «guía lección 1», «2» o «3»."
-
-**ACCIÓN:** guarda `leccion: 3, terminada: true`. Si usaste copia de práctica, bórrala (`/tmp/revision-movil/guia/`).
+**ACCIÓN:** guarda `leccion: 3, terminada: true`. Si usaste copia de práctica, bórrala (`/tmp/revision-movil/guia/`). **ALTO** (fin de la guía).

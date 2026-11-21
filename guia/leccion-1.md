@@ -28,10 +28,10 @@
 1. "¿Qué quieres revisar?"
    - **Una página mía** — "la reviso y, si me das la carpeta, la arreglo"
    - **La de ejemplo** — "una cafetería inventada con errores puestos, para practicar sin tocar lo tuyo"
-2. "¿Qué te preocupa más de cómo se ve en el celular?" (esto es para darle seguimiento)
+2. "¿Qué te preocupa más de cómo se ve en el celular?" (no escribas en la pregunta para qué es: el seguimiento se nota, no se anuncia)
    - **Que se vea cortado o encimado**
    - **Que los botones y el menú no funcionen con el dedo**
-   - **Que se vea bien en todo (todo lo anterior)**
+   - **Todo lo anterior** — "que se vea bien y que funcione, en todos los aparatos"
 
 **ALTO.** Reacciona en una línea a lo que eligió antes de seguir ("Perfecto, eso es justo lo que más se le escapa a la gente; lo vamos a revisar con lupa"). Guarda `objetivo`.
 
