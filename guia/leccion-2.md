@@ -13,7 +13,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-"Bien, [nombre]. Ya vimos que [lo más grave de la lección 1]. Vamos a arreglarlo."
+"Bien, [nombre]. Ya vimos que [lo más grave de la lección 1]. [Retoma su `objetivo`: "Y como lo que más te preocupaba era que se viera cortado, empezamos por ahí."] Vamos a arreglarlo."
 
 Si `puede_editar` es false (solo link): "Con el link no puedo cambiar tu página. Te dejo la lista de cambios para quien la lleve y seguimos con la de ejemplo para que veas cómo se arregla." Entrega la lista (corta) y sigue con el ejemplo.
 

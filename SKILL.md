@@ -28,10 +28,11 @@ Revisa Python 3.9+, Playwright, el navegador Chromium de Playwright, Pillow y ff
   > "¿Quieres que te enseñe rápido a usarla y sacarle el mayor provecho? Son unos 5 min, mientras revisamos tu primera página.
   > Si prefieres ir directo, está perfecto: puedes abrir la guía cuando quieras, solo dime «ábreme la guía»."
 
-  Luego crea el archivo con `{"guia_ofrecida": true}` (crea la carpeta si hace falta). Si dice que sí, abre `guia/leccion-1.md` y síguela.
+  Luego crea el archivo con `{"guia_ofrecida": true}` (crea la carpeta si hace falta). Si dice que sí, abre `guia/leccion-1.md` y síguela. **Tu primer mensaje de la guía es siempre la bienvenida** (banner + "¡Hola, [nombre]! Bienvenido a la guía" + nota de @dakexplica), antes de cualquier botón o comando; nunca narres lo que haces ("Llevo la revisión…", "ya confirmé…").
 - **Si existe**, no vuelvas a preguntar: haz el trabajo directo.
 - **En la app de Claude** (sin archivos entre chats) la pregunta solo sale cuando la persona instala la skill o escribe el mensaje de prueba de la ficha. Después no vuelve a salir sola.
 - Frases que abren la guía siempre: «ábreme la guía», «empieza la guía», «quiero la guía» (desde cero), «retoma la guía» (donde se quedó, en `~/.dakexplica/dak-revision-movil.json`), «guía lección 2» (una suelta), «sal de la guía» (volver al uso normal).
+- Aunque la abran con «empieza la guía», el primer mensaje es igual la bienvenida de la lección 1.
 - La guía son 3 lecciones cortas en `guia/`. Cada una es un guion para Claude (lo que dices, **ACCIÓN** y **ALTO**). **Antes de cada lección lee `guia/estilo.md`**: se da en vivo (saludo con su nombre, reaccionas a lo que dice, seguimiento entre lecciones), nunca seca. Nunca sigas sin que la persona conteste.
 
 ## La regla de oro: medir, MIRAR, tocar, arreglar, volver a medir

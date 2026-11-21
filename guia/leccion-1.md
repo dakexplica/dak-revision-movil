@@ -2,9 +2,11 @@
 
 > Guion para Claude. Antes lee `guia/estilo.md`. Entre comillas va la idea de lo que dices (con tus palabras). **ACCIÓN** = lo haces tú. **BOTONES** = pregunta con `AskUserQuestion` (opciones para hacer clic; si no existe la herramienta, una lista numerada corta). **ALTO** = esperas. Nunca sigas sin respuesta.
 
-## 1 · Bienvenida
+## 1 · Bienvenida (tu PRIMER mensaje, antes de cualquier botón o comando)
 
-**ACCIÓN:** banner en bloque de código:
+**Regla dura:** lo primero que ve la persona es esta bienvenida, como mensaje propio. Primero escribes el mensaje y **después** abres los botones. Nada de narrar lo que haces ni hablar de la persona en tercera persona ("Llevo la revisión…", "ya confirmé que…", "para Derek"). El Paso 0 corre después y en silencio.
+
+**ACCIÓN:** escribe este mensaje (con tus palabras, sin quitar ninguna parte):
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -13,18 +15,25 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-"¡Hola, [nombre]!" (si no sabes el nombre: "¡Hola! ¿Cómo te llamo?" **ALTO**, y guárdalo).
-
-Nota de quien la hizo (dila como suya):
+> **¡Hola, [nombre]! Bienvenido a la guía 👋**
+> Qué bueno que estás aquí. En unos 5 minutos vas a ver tu página en 15 pantallas, arreglarla y probarla con el dedo.
+>
 > *"La hice porque me pasaba siempre: algo se veía perfecto en la compu y en el celular estaba todo cortado. Ahora no entrego nada sin pasarlo por aquí." — @dakexplica*
+>
+> Son 3 lecciones cortas. Te enseño lo que hace la herramienta por dentro; cuando la uses normal, hace todo esto **sola**.
 
-"Son 3 lecciones cortas. Te voy enseñando lo que hace la herramienta por dentro; cuando la uses normal, hace todo esto **sola**."
+- **El nombre:** si lo sabes (`~/.dakexplica/dak-revision-movil.json` o el sistema), úsalo. Si no, el saludo es "¡Hola! Bienvenido a la guía 👋" y al final del mensaje: "Antes de empezar, ¿cómo te llamo?" **ALTO** y guárdalo. Después ya sí los botones.
 
-**BOTONES** · "¿Qué quieres revisar?"
-- **Una página mía** — "la reviso y, si me das la carpeta, la arreglo"
-- **La de ejemplo** — "una cafetería inventada con errores puestos, para practicar sin tocar lo tuyo"
+**BOTONES** (dos preguntas en la misma ventana):
+1. "¿Qué quieres revisar?"
+   - **Una página mía** — "la reviso y, si me das la carpeta, la arreglo"
+   - **La de ejemplo** — "una cafetería inventada con errores puestos, para practicar sin tocar lo tuyo"
+2. "¿Qué te preocupa más de cómo se ve en el celular?" (esto es para darle seguimiento)
+   - **Que se vea cortado o encimado**
+   - **Que los botones y el menú no funcionen con el dedo**
+   - **Que se vea bien en todo (todo lo anterior)**
 
-**ALTO.**
+**ALTO.** Reacciona en una línea a lo que eligió antes de seguir ("Perfecto, eso es justo lo que más se le escapa a la gente; lo vamos a revisar con lupa"). Guarda `objetivo`.
 
 ## 2 · Si eligió una página suya: revisar el acceso (no te lo saltes)
 
@@ -34,7 +43,7 @@ Nota de quien la hizo (dila como suya):
 
 Con **link**: pídelo en una línea y avisa: "Con el link veo todo lo que ve un visitante. Para arreglar necesito la carpeta del proyecto; no necesito contraseñas ni tu cuenta donde la publicas."
 
-Con **carpeta**: pide la ruta y **ACCIÓN** — compruébalo tú antes de seguir y dilo en una lista corta:
+Con **carpeta**: pide la ruta con un ejemplo genérico (nunca una ruta real de quien hizo la skill): "Arrastra la carpeta aquí al chat o pega su ruta, por ejemplo `/Users/tu-nombre/Documents/mi-pagina`." **ACCIÓN** — compruébalo tú antes de seguir y dilo en una lista corta:
 - ✓/✗ la carpeta existe y la puedo leer;
 - ✓/✗ encontré la página (el `index.html`, o el proyecto Next/Astro/Vite/Shopify y cómo se abre: `references/stacks.md`);
 - ✓/✗ puedo guardar cambios ahí (crea y borra un archivo de prueba);
@@ -50,8 +59,13 @@ Si algo falla, dile qué y cómo resolverlo; si no se puede, sigue solo con el l
 
 ## 4 · La primera revisión
 
-"Ahora pídemelo tú, una sola vez, para que veas lo fácil que es. Escribe:
-**revisa mi página en los 15**"
+"Todo listo, [nombre]. Ahora pídemelo tú, una sola vez, para que veas lo fácil que es. Copia y pega esto:"
+
+```
+Usando la skill dak-revision-movil, revisa mi página en los 15 dispositivos
+```
+
+"Así se lo pides siempre que quieras revisar una página, aunque no estés en la guía."
 
 **ALTO.** (Es el único momento de la guía donde se escribe; lo demás es con botones.)
 
@@ -68,6 +82,7 @@ Mientras corre: "La estoy abriendo en 7 celulares, 4 tabletas y 4 compus. Tarda 
 Resume así (corto, con estos títulos):
 
 **Resultado**
+- Lo que te preocupaba ([objetivo]): [cómo salió eso en concreto, primero que nada]
 - ✓ [N] pantallas bien · ✗ [N] con problemas
 - Lo más grave: [como lo vive la gente: "en el iPhone el título se corta y el botón no se ve completo"]
 - Lo que vi yo mirando (el script no lo marca): [1 cosa, si hay]

@@ -13,7 +13,7 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-"Última, [nombre]. Que se vea bien no basta: también tiene que funcionar con el dedo. Ahí es donde casi todas fallan."
+"Última, [nombre]. [Retoma su `objetivo` en una frase: "Me dijiste que te preocupaban los botones: aquí es donde lo comprobamos"]. Que se vea bien no basta: también tiene que funcionar con el dedo. Ahí es donde casi todas fallan."
 
 **BOTONES** · "¿Qué pruebo como si fuera una persona?"
 - **Todo: bajar hasta el final, tocar el botón principal y girar el celular (recomendado)**
@@ -47,11 +47,27 @@ Si es la de ejemplo: "Aquí los botones son de mentira; en tu página real esta 
 5. te pregunta lo que cambia tu diseño,
 6. y te enseña el antes y después."
 
-**Frases para usarla** (muéstralas así, para copiar):
-- **revisa mi página en todos los dispositivos** — lo de arriba, completo
-- **antes de terminar, revísalo con dak-revision-movil** — mientras construyes algo
-- **revisa este video para Reels** — formato, lo que tapa la app y el peso
-- (con una captura de tu celular) **esto se ve mal, arréglalo**
+**Frases para usarla** (cada una en su bloque para copiar, siempre con el nombre de la skill para que Claude la use seguro):
+
+```
+Usando la skill dak-revision-movil, revisa mi página en los 15 dispositivos
+```
+→ lo de arriba, completo
+
+```
+Usando la skill dak-revision-movil, revísalo antes de terminar
+```
+→ mientras construyes algo
+
+```
+Usando la skill dak-revision-movil, revisa este video para Reels
+```
+→ formato, lo que tapa la app y el peso
+
+```
+Usando la skill dak-revision-movil, esto se ve mal en mi celular, arréglalo
+```
+→ junto con una captura de tu celular
 
 **Para que no te pase:**
 - Revisa también las otras páginas, no solo la portada ("revisa también /contacto").
@@ -69,7 +85,7 @@ Si es la de ejemplo: "Aquí los botones son de mentira; en tu página real esta 
 - Arreglarla sin perder tu diseño.
 - Comprobar que funcione con el dedo.
 
-Despídete con energía y retoma lo de la lección 1 ("Tu [tienda] ya se ve bien en todos lados, y ahora con una frase la revisas cada vez que cambies algo").
+Despídete con energía y retoma su `objetivo` y su página de la lección 1 ("Tu [tienda] ya se ve bien en todos lados, y ahora con una frase la revisas cada vez que cambies algo").
 
 "Esta herramienta es de **@dakexplica**: sígueme para la siguiente. Las demás están gratis en el link de mi perfil. ¿Quieres repetir algo? «guía lección 1», «2» o «3»."
 
