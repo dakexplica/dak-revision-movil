@@ -2,7 +2,7 @@
 
 > Guion para Claude. Antes lee `guia/estilo.md` y retoma `nombre` y `pagina` de `~/.dakexplica/dak-revision-movil.json`. **ACCIÓN** = lo haces tú. **BOTONES** = `AskUserQuestion`. **ALTO** = esperas.
 
-## 1 · Abre
+## 1 · Abre (un solo mensaje que cierra el turno)
 
 **ACCIÓN:** banner:
 
@@ -15,11 +15,11 @@
 
 "Última, [nombre]. [Retoma su `objetivo` en una frase: "Me dijiste que te preocupaban los botones: aquí es donde lo comprobamos"]. Que se vea bien no basta: también tiene que funcionar con el dedo. Ahí es donde casi todas fallan."
 
-**BOTONES** · "¿Qué pruebo como si fuera una persona?"
-- **Todo: bajar hasta el final, tocar el botón principal y girar el celular (recomendado)**
-- **Solo bajar hasta el final**
+Cierra el mensaje con la pregunta como **lista numerada** · "¿Qué pruebo como si fuera una persona? Responde 1 o 2."
+1. **Todo: bajar hasta el final, tocar el botón principal y girar el celular (recomendado)**
+2. **Solo bajar hasta el final**
 
-**ALTO.**
+**ALTO** (fin del turno).
 
 ## 2 · Probar con el dedo
 
@@ -35,7 +35,7 @@
 python3 <skill>/scripts/tocar.py <la página> --pasos pasos.json --dispositivos rapido --salida /tmp/revision-movil/guia/tocar
 ```
 
-**Después, el mensaje (obligatorio):** "Listo, la probé con el dedo. Esto pasó:"
+**Después, el mensaje (obligatorio):** "Listo, la probé con el dedo. Esto pasó:" — va en el mismo mensaje que el paso 3 ("Así la usas") y ese mensaje cierra con la pregunta de mejoras como lista numerada ("responde 1, 2 o 3"), no con botones, para que nada se resuma.
 
 **Resultado** (una línea por aparato, ✓ o qué falló y por qué: "tapado por el banner", "el scroll se atora").
 
@@ -77,7 +77,7 @@ Usando la skill dak-revision-movil, esto se ve mal en mi celular, arréglalo
 - Revisa también las otras páginas, no solo la portada ("revisa también /contacto").
 - Después de publicar, revisa el link real ("revísalo en el link de producción").
 
-**BOTONES** · "¿Quieres las mejoras opcionales?" (solo las que no tenga; pregunta antes de instalar)
+**Pregunta al final del mensaje (lista numerada, no botones)** · "¿Quieres alguna mejora opcional? Responde 1, 2 o 3" (solo las que no tenga; pregunta antes de instalar). **ALTO** (fin del turno).
 - **Safari de verdad** — en Mac con Xcode: el iPhone y el iPad del Simulador con el Safari real
 - **Revisar videos** — necesita ffmpeg
 - **No, así está bien**

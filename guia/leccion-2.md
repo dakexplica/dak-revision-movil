@@ -2,7 +2,9 @@
 
 > Guion para Claude. Antes lee `guia/estilo.md` y retoma `nombre`, `pagina` y `puede_editar` de `~/.dakexplica/dak-revision-movil.json`. **ACCIÓN** = lo haces tú. **BOTONES** = `AskUserQuestion`. **ALTO** = esperas.
 
-## 1 · Abre
+## 1 · Abre (pasos 1, 2 y 3 van en UN solo mensaje que cierra el turno)
+
+Cuando diga «sigue»: copia la página de práctica y prepara los arreglos obvios **en silencio**, y después escribe un solo mensaje con el banner, lo que retomas, las dos reglas, los arreglos con ✓ y la pregunta de diseño como **lista numerada** ("responde 1 o 2"). Así nada se resume. **ALTO** (fin del turno).
 
 **ACCIÓN:** banner:
 
@@ -27,12 +29,12 @@ Si `puede_editar` es false (solo link): "Con el link no puedo cambiar tu página
 
 **Página de ejemplo:** copia `<skill>/guia/ejemplo/` a `/tmp/revision-movil/guia/pagina/` y trabaja ahí (la de la skill no se toca). El arreglo ya está preparado en `<skill>/guia/ejemplo-arreglado/index.html`: no lo inventes desde cero, así es rápido.
 - **ACCIÓN:** di lo obvio que arreglas, una línea cada uno, con ✓ (letra de "TOSTADORES" más grande, botones del menú más fáciles de tocar, título y botones que ya no se salen, tarjetas que bajan a una columna).
-- **BOTONES** · "Esto sí cambia tu diseño: en el celular el menú no cabe en una línea. ¿Qué hago?"
-  - **Ponerlo en dos líneas bajo el logo (recomendado)**
-  - **Dejarlo en una línea con letra más chica**
+- **Pregunta al final del mensaje (lista numerada)** · "Esto sí cambia tu diseño: en el celular el menú no cabe en una línea. ¿Qué hago? Responde 1 o 2."
+  1. **Ponerlo en dos líneas bajo el logo (recomendado)**
+  2. **Dejarlo en una línea con letra más chica**
 - **ALTO.** Copia `ejemplo-arreglado/index.html` sobre la copia de práctica (si eligió la otra opción, ajusta solo el menú).
 
-**Página suya (con carpeta):** sigue los pasos 5–6 de `SKILL.md` de verdad: arregla lo obvio (una línea por arreglo, con ✓) y junta lo que cambia el diseño en **BOTONES** (máx. 4 preguntas, tu recomendación primero). **ALTO** y aplica lo que elija.
+**Página suya (con carpeta):** sigue los pasos 5–6 de `SKILL.md` de verdad: arregla lo obvio (una línea por arreglo, con ✓) y junta lo que cambia el diseño al final del mismo mensaje como lista numerada (máx. 4 preguntas, tu recomendación primero; "responde por ejemplo 1A 2B"). **ALTO** y aplica lo que elija.
 
 ## 4 · Comprobar
 
@@ -53,7 +55,9 @@ python3 <skill>/scripts/comparar.py /tmp/revision-movil/guia/antes /tmp/revision
 
 Si salió algo **NUEVO** (un arreglo que rompió otra cosa), dilo y arréglalo antes de seguir.
 
-## 5 · Cierre (MENSAJE obligatorio, antes de los botones)
+## 5 · Cierre (MENSAJE obligatorio que CIERRA el turno, sin botones)
+
+Junta en este mismo mensaje el **Resultado** del paso 4 (con la imagen ya mostrada) y el cierre: si pones botones después, la app lo resume en una línea.
 
 > **Lo que lograste, [nombre]**
 > - Arreglaste lo obvio sin tocar tu diseño: [los arreglos, en una línea].
@@ -61,8 +65,8 @@ Si salió algo **NUEVO** (un arreglo que rompió otra cosa), dilo y arréglalo a
 >
 > **Lo que sigue:** en la lección 3 la uso como una persona con el dedo (bajo hasta el final, toco el botón principal, giro el celular). Ahí es donde casi todas fallan sin que nadie se dé cuenta.
 
-**BOTONES** (después del mensaje) · "¿Vamos a la última?"
-- **Sí, vamos a la 3**
-- **Lo dejo aquí**
+> **¿Vamos a la última?** Escríbeme **«sigue»** y pasamos a la lección 3.
+
+**ALTO** (fin del turno).
 
 **ACCIÓN:** guarda `leccion: 2`.

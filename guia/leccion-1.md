@@ -4,7 +4,7 @@
 
 ## 1 · Bienvenida (tu PRIMER mensaje, antes de cualquier botón o comando)
 
-**Regla dura:** lo primero que ve la persona es esta bienvenida, como mensaje propio. Primero escribes el mensaje y **después** abres los botones. Nada de narrar lo que haces ni hablar de la persona en tercera persona ("Llevo la revisión…", "ya confirmé que…", "para Derek"). El Paso 0 corre después y en silencio.
+**Regla dura:** lo primero que ve la persona es esta bienvenida, como mensaje propio, y **con ella TERMINAS tu turno** (nada de botones ni comandos después en ese mismo turno). En la app de Claude, el texto que va justo antes de un botón se resume en una línea y la bienvenida se pierde. Nada de narrar lo que haces ni hablar de la persona en tercera persona ("Llevo la revisión…", "ya confirmé que…", "para Derek"). El Paso 0 corre después y en silencio.
 
 **ACCIÓN:** escribe este mensaje (con tus palabras, sin quitar ninguna parte):
 
@@ -22,9 +22,9 @@
 >
 > Son 3 lecciones cortas. Te enseño lo que hace la herramienta por dentro; cuando la uses normal, hace todo esto **sola**.
 
-- **El nombre:** si lo sabes (`~/.dakexplica/dak-revision-movil.json` o el sistema), úsalo. Si no, el saludo es "¡Hola! Bienvenido a la guía 👋" y al final del mensaje: "Antes de empezar, ¿cómo te llamo?" **ALTO** y guárdalo. Después ya sí los botones.
+- **Cómo termina el mensaje:** si no sabes su nombre, el saludo es "¡Hola! Bienvenido a la guía 👋" y cierra con **"Antes de empezar, ¿cómo te llamo?"**. Si ya lo sabes, cierra con **"Cuando estés listo, escríbeme «vamos» y empezamos."** **ALTO** (fin del turno). Guarda el nombre.
 
-**BOTONES** (dos preguntas en la misma ventana):
+**En tu siguiente turno**, después de reaccionar en una línea ("¡Mucho gusto, [nombre]!"), los **BOTONES** (dos preguntas en la misma ventana; lo importante va dentro de la pregunta, no en el texto de antes):
 1. "¿Qué quieres revisar?"
    - **Una página mía** — "la reviso y, si me das la carpeta, la arreglo"
    - **La de ejemplo** — "una cafetería inventada con errores puestos, para practicar sin tocar lo tuyo"
@@ -79,9 +79,9 @@ python3 <skill>/scripts/revisar.py <link o carpeta> --salida /tmp/revision-movil
 
 **ACCIÓN:** muestra `hoja.png` (Read) y, si hay errores, `iphone/marcado.png`.
 
-## 5 · Lo que encontré (MENSAJE obligatorio, antes de cualquier botón)
+## 5 · Lo que encontré (MENSAJE obligatorio que CIERRA el turno)
 
-**Regla dura:** después de la revisión SIEMPRE escribes este mensaje. Nunca pases de los comandos directo a los botones: la persona tiene que saber qué hiciste y qué encontraste.
+**Regla dura:** después de la revisión SIEMPRE escribes este mensaje y **con él terminas el turno, sin botones** (si pones botones después, la app lo resume en una línea y la persona no se entera de nada).
 
 > **Listo, [nombre]. Ya revisé tu página en las 15 pantallas.**
 >
@@ -100,8 +100,8 @@ python3 <skill>/scripts/revisar.py <link o carpeta> --salida /tmp/revision-movil
 >
 > **Lo que sigue:** en la lección 2 arreglo [lo más grave, con sus palabras] sin tocar tu diseño, te pregunto lo que sí lo cambiaría, y te enseño el antes y después lado a lado.
 
-**BOTONES** (después del mensaje) · "¿Seguimos con la 2?"
-- **Sí, vamos a la 2**
-- **Lo dejo aquí** — "cuando quieras: «retoma la guía»"
+> **¿Seguimos?** Escríbeme **«sigue»** y vamos a la lección 2. Si prefieres dejarlo aquí, cuando quieras me dices «retoma la guía».
+
+**ALTO** (fin del turno).
 
 **ACCIÓN:** guarda en `~/.dakexplica/dak-revision-movil.json`: `nombre`, `leccion: 1`, `pagina` (ruta o link, o "ejemplo"), `puede_editar` (true/false), `objetivo` (si lo dijo).
