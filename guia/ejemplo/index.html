@@ -1,0 +1,45 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex"><title>Café Luna · página de prueba (datos ficticios)</title>
+<style>
+@font-face{font-family:"Instrument Serif";src:url(InstrumentSerif-Regular.ttf)}
+@font-face{font-family:"Instrument Serif";font-style:italic;src:url(InstrumentSerif-Italic.ttf)}
+:root{--ink:#111418;--mut:#5B636E;--acc:#1E5B4F;--acc2:#E8F0EC;--line:#E6E8EB}
+body{margin:0;font-family:"Avenir Next",-apple-system,Helvetica,Arial,sans-serif;background:#fff;color:var(--ink)}
+a{text-decoration:none;color:inherit}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 64px;border-bottom:1px solid var(--line);background:#fff}
+.logo{display:flex;align-items:center;gap:12px}
+.logo b{font:400 34px/1 "Instrument Serif",serif;letter-spacing:.01em}
+.logo small{display:block;font:600 11px/1 "Avenir Next",sans-serif;letter-spacing:.22em;color:var(--mut);margin-top:4px}
+nav .links a{margin-left:30px;font-size:16px;font-weight:600;color:#2B3038}
+nav .links a.pedir{background:var(--ink);color:#fff;padding:12px 22px;border-radius:99px}
+.hero{display:flex;gap:64px;padding:72px 64px 56px;align-items:center}
+.eyebrow{display:inline-block;background:var(--acc2);color:var(--acc);font-weight:700;font-size:14px;letter-spacing:.08em;padding:8px 14px;border-radius:99px}
+.hero h1{font:400 84px/.98 "Instrument Serif",serif;margin:18px 0 0;width:640px}
+.hero h1 em{color:var(--acc)}
+.hero p{font-size:20px;line-height:1.5;width:520px;color:var(--mut)}
+.hero .foto{width:560px;height:440px;object-fit:cover;border-radius:28px;box-shadow:0 30px 60px rgba(17,20,24,.18)}
+.btns{display:flex;gap:14px;margin-top:28px;width:660px}
+.btn{padding:18px 34px;border-radius:99px;background:var(--acc);color:#fff;font-weight:700;font-size:17px;white-space:nowrap}
+.btn.b{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.cards{display:grid;grid-template-columns:repeat(3,380px);gap:24px;padding:12px 64px 72px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 10px 24px rgba(17,20,24,.06)}
+.card img{display:block;width:100%;height:220px;object-fit:cover}
+.card div{padding:18px 22px 22px;display:flex;justify-content:space-between;align-items:baseline}
+.card h3{margin:0;font:400 30px/1 "Instrument Serif",serif}.card small{display:block;font-size:11px;color:var(--mut);margin-top:6px}
+.card span{font-weight:700;font-size:18px;color:var(--acc)}
+.nota{font-size:12px;color:#9AA1AA;text-align:center;padding:0 0 30px}
+
+/* pantallas grandes: contenido centrado (máx. 1280 px), no pegado a un lado */
+@media (min-width:1200px){nav,.hero,.cards{padding-left:max(64px,calc((100vw - 1280px)/2));padding-right:max(64px,calc((100vw - 1280px)/2))}.hero{justify-content:space-between}.hero>div{flex:1 1 0;min-width:0}.cards{max-width:none;grid-template-columns:repeat(3,1fr)}}
+</style></head><body>
+<nav><a class="logo" href="#"><svg width="46" height="46" viewBox="0 0 48 48" aria-hidden="true"><defs><mask id="m"><rect width="48" height="48" fill="#fff"/><circle cx="31" cy="19" r="16" fill="#000"/></mask></defs><circle cx="24" cy="24" r="22" fill="#1E5B4F" mask="url(#m)"/><g transform="rotate(-30 31 22)"><ellipse cx="31" cy="22" rx="6.2" ry="8.6" fill="#111418"/><path d="M31 13.6c-3 3.2 3 13.6 0 16.8" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round"/></g></svg><span><b>Café Luna</b><small>TOSTADORES</small></span></a>
+<div class="links"><a href="#">Menú</a><a href="#">Reservas</a><a href="#">Ubicación</a><a class="pedir" href="#">Pedir</a></div></nav>
+<section class="hero"><div><span class="eyebrow">TOSTADO ESTA SEMANA</span><h1>Café de especialidad, <em>hecho a mano</em></h1><p>Granos de Chiapas y Colombia, tostados cada lunes. Pide en línea y recoge sin hacer fila.</p>
+<div class="btns"><a class="btn" href="#">Pedir en línea ahora</a><a class="btn b" href="#">Reservar una mesa</a><a class="btn b" href="#">Ver el menú</a></div></div>
+<img class="foto" src="img/hero.jpg" alt="Barista sirviendo leche en un latte"></section>
+<section class="cards">
+<a class="card" href="#"><img src="img/latte.jpg" alt="Latte"><div><span style="color:inherit;font-weight:400"><h3>Latte</h3><small>Leche de avena sin costo</small></span><span>$65</span></div></a>
+<a class="card" href="#"><img src="img/taza.jpg" alt="Café americano"><div><span style="color:inherit;font-weight:400"><h3>Americano</h3><small>De origen, recién molido</small></span><span>$45</span></div></a>
+<a class="card" href="#"><img src="img/granos.jpg" alt="Granos de café"><div><span style="color:inherit;font-weight:400"><h3>Granos 250 g</h3><small>Para llevar a casa</small></span><span>$240</span></div></a>
+</section><p class="nota">Página de prueba · datos ficticios</p>
+</body></html>

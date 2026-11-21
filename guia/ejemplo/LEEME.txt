@@ -1,0 +1,3 @@
+Página de ejemplo de la mini guía (negocio inventado, datos ficticios).
+Fotos: Unsplash (licencia Unsplash, uso libre). Letra: Instrument Serif (SIL Open Font License).
+Tiene errores a propósito en celular y tableta: es para practicar.
