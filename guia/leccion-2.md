@@ -1,55 +1,64 @@
-# Lección 2 · Arréglala con lo tuyo (1–2 min)
+# Lección 2 · Arréglala sin que toque tu diseño (~2 min)
 
-> Guion para Claude. Antes, lee `guia/estilo.md`. Retoma el nombre, la página y lo que le preocupaba de `~/.dakexplica/dak-revision-movil.json`. **ACCIÓN** = lo haces tú. **ALTO** = esperas la respuesta. Usa la página que eligió en la lección 1 (está en `~/.dakexplica/dak-revision-movil.json`). Si usaron la de ejemplo, **cópiala primero** a `/tmp/revision-movil/guia/pagina/` y trabaja sobre la copia: la de la skill no se toca.
->
-> **Si solo dio el link** (sin la carpeta del proyecto): no se puede editar. Dile: "Con el link ya vimos qué falla; para arreglarlo necesito la carpeta del proyecto en tu compu. ¿Me dices dónde está? Si no la tienes a la mano, te dejo la lista de cambios para quien lleve tu página y seguimos la lección con la de ejemplo." **ALTO.**
+> Guion para Claude. Antes lee `guia/estilo.md` y retoma `nombre`, `pagina` y `puede_editar` de `~/.dakexplica/dak-revision-movil.json`. **ACCIÓN** = lo haces tú. **BOTONES** = `AskUserQuestion`. **ALTO** = esperas.
 
-**ACCIÓN:** muestra este banner en un bloque de código:
+## 1 · Abre
+
+**ACCIÓN:** banner:
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   REVISIÓN EN 15 PANTALLAS  ·  guía 2 de 3
-   Arreglarla sin que toque tu diseño
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  REVISIÓN EN 15 PANTALLAS
+  ▰▰▱  Lección 2 de 3 · Arréglala sin que toque tu diseño
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-Retoma con su nombre y lo de la lección 1: "Bien, [nombre]. Ya vimos que en el celular [lo más grave]. Vamos a arreglarlo."
+"Bien, [nombre]. Ya vimos que [lo más grave de la lección 1]. Vamos a arreglarlo."
 
-"La skill separa los problemas en dos:
-- **lo obvio** (letra chica, botones difíciles de tocar, algo que se sale de la pantalla), que arregla sola sin cambiar tu diseño;
-- **lo que cambia tu diseño** (mover el menú, reordenar, quitar algo), que siempre te pregunta antes."
+Si `puede_editar` es false (solo link): "Con el link no puedo cambiar tu página. Te dejo la lista de cambios para quien la lleve y seguimos con la de ejemplo para que veas cómo se arregla." Entrega la lista (corta) y sigue con el ejemplo.
 
-"Pídemelo tú: escríbeme **«Arregla lo obvio y pregúntame lo que cambie mi diseño»**." **ALTO.**
+## 2 · Las dos reglas de la herramienta
 
-**ACCIÓN:** arregla lo obvio en el código (pasos 5 y 6 de SKILL.md). Mientras lo haces, di en una línea cada cosa: "Pongo la letra de 'TOSTADORES' más grande para que se lea en celular".
+"La herramienta separa lo que encuentra en dos:
+- **Lo obvio** (letra chica, botones difíciles de tocar, algo que se sale): lo arregla sola, sin cambiar tu diseño.
+- **Lo que cambia tu diseño** (mover el menú, reordenar, quitar algo): siempre te pregunta antes."
 
-**ACCIÓN:** si hay algo que cambia el diseño, pregúntalo con `AskUserQuestion` (o con una pregunta corta si no está disponible), con tu recomendación primero. Ejemplo con la página de ejemplo:
-> "En el celular el menú no cabe en una línea y se corta. ¿Lo paso a dos líneas debajo del logo? (recomendado) · ¿Lo dejo en una línea y achico las letras?"
+## 3 · Arreglar
 
-**ALTO.**
+**Página de ejemplo:** copia `<skill>/guia/ejemplo/` a `/tmp/revision-movil/guia/pagina/` y trabaja ahí (la de la skill no se toca). El arreglo ya está preparado en `<skill>/guia/ejemplo-arreglado/index.html`: no lo inventes desde cero, así es rápido.
+- **ACCIÓN:** di lo obvio que arreglas, una línea cada uno, con ✓ (letra de "TOSTADORES" más grande, botones del menú más fáciles de tocar, título y botones que ya no se salen, tarjetas que bajan a una columna).
+- **BOTONES** · "Esto sí cambia tu diseño: en el celular el menú no cabe en una línea. ¿Qué hago?"
+  - **Ponerlo en dos líneas bajo el logo (recomendado)**
+  - **Dejarlo en una línea con letra más chica**
+- **ALTO.** Copia `ejemplo-arreglado/index.html` sobre la copia de práctica (si eligió la otra opción, ajusta solo el menú).
 
-**ACCIÓN:** aplica lo que eligió, vuelve a medir y compara:
+**Página suya (con carpeta):** sigue los pasos 5–6 de `SKILL.md` de verdad: arregla lo obvio (una línea por arreglo, con ✓) y junta lo que cambia el diseño en **BOTONES** (máx. 4 preguntas, tu recomendación primero). **ALTO** y aplica lo que elija.
+
+## 4 · Comprobar
+
+**ACCIÓN:** vuelve a medir en los 4 aparatos clave (rápido) y compara:
 
 ```bash
-python3 <skill>/scripts/revisar.py <la misma página> --salida /tmp/revision-movil/guia/despues
+python3 <skill>/scripts/revisar.py <la página> --dispositivos rapido --salida /tmp/revision-movil/guia/despues
 python3 <skill>/scripts/comparar.py /tmp/revision-movil/guia/antes /tmp/revision-movil/guia/despues
 ```
 
-**ACCIÓN:** muéstrale `antes-despues.png` con Read.
+**ACCIÓN:** muestra **`antes-despues-claro.png`** (Read): cada aparato en pareja, ANTES y DESPUÉS, en rojo si tiene errores y en verde si quedó bien. (No uses `antes-despues.png` para explicar: es la versión completa y no se entiende de un vistazo.)
 
-"Antes: [X] pantallas con problemas. Ahora: [Y]. Lo que vas a notar en el celular: [lo más visible, en una frase]." Celébralo y conéctalo con lo que le preocupaba ("Lo que te preocupaba de tu tienda ya no pasa").
+**Resultado**
+- iPhone: [N errores] → bien · Android: … · iPad: … · Mac: …
+- Lo que vas a notar: [lo más visible, en una frase, conectado con lo que le preocupaba]
 
-Si algo quedó o salió algo **NUEVO** (un arreglo que rompió otra cosa), dilo y arréglalo antes de seguir.
+Si salió algo **NUEVO** (un arreglo que rompió otra cosa), dilo y arréglalo antes de seguir.
 
-"Tip: para pedir cambios no necesitas saber de código. Dime lo que ves, por ejemplo «en el iPad el botón queda muy abajo» o «en el celular quiero la foto primero»."
-
-Cierra con el resumen:
+## 5 · Cierre
 
 **Lo que lograste, [nombre]**
 - Arreglaste lo obvio sin tocar tu diseño.
-- Decidiste tú lo que cambiaba el diseño.
-- Comprobaste el antes y el después en las 15 pantallas.
+- Decidiste tú lo que sí lo cambiaba.
 
-"Ya está bien hecha. En la última (2 minutos) vas a ver que también funcione con el dedo, que es donde la mayoría falla sin saberlo. ¿Vamos?"
+**BOTONES** · "¿Última? En la 3 vemos que funcione con el dedo, que es donde casi todas fallan sin que nadie se dé cuenta."
+- **Sí, vamos a la 3**
+- **Lo dejo aquí**
 
-**ALTO.** Guarda `"leccion": 2`.
+**ACCIÓN:** guarda `leccion: 2`.

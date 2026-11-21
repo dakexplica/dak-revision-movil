@@ -1,88 +1,87 @@
-# Lección 1 · Déjala lista y pruébala (1–2 min)
+# Lección 1 · Mírala como la ve todo el mundo (~2 min)
 
-> Guion para Claude. Antes de empezar lee `guia/estilo.md` (cómo se da la guía: en vivo, cercana, con seguimiento). Lo que va entre comillas es la idea de lo que dices, con tus palabras. **ACCIÓN** = lo haces tú. **ALTO** = esperas la respuesta. Nunca sigas sin que conteste.
+> Guion para Claude. Antes lee `guia/estilo.md`. Entre comillas va la idea de lo que dices (con tus palabras). **ACCIÓN** = lo haces tú. **BOTONES** = pregunta con `AskUserQuestion` (opciones para hacer clic; si no existe la herramienta, una lista numerada corta). **ALTO** = esperas. Nunca sigas sin respuesta.
 
-## Bienvenida
+## 1 · Bienvenida
 
-**ACCIÓN:** muestra este banner en un bloque de código:
+**ACCIÓN:** banner en bloque de código:
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   REVISIÓN EN 15 PANTALLAS  ·  guía 1 de 3
-   Tu página, vista como la ve todo el mundo
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  REVISIÓN EN 15 PANTALLAS
+  ▰▱▱  Lección 1 de 3 · Mírala como la ve todo el mundo
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-Saluda con energía y por su nombre si lo sabes ("¡Hola, Ana!"). Si no lo sabes: "¡Hola! Antes de empezar, ¿cómo te llamo?" **ALTO.** Guárdalo en `~/.dakexplica/dak-revision-movil.json` (`"nombre"`).
+"¡Hola, [nombre]!" (si no sabes el nombre: "¡Hola! ¿Cómo te llamo?" **ALTO**, y guárdalo).
 
-Comparte esta nota y di que es de quien hizo la herramienta:
+Nota de quien la hizo (dila como suya):
+> *"La hice porque me pasaba siempre: algo se veía perfecto en la compu y en el celular estaba todo cortado. Ahora no entrego nada sin pasarlo por aquí." — @dakexplica*
 
-> *"La hice porque me pasaba siempre: construía algo en la compu, se veía perfecto, y luego lo abría en el celular y estaba todo cortado. Ahora no entrego nada sin pasarlo por aquí. Ojalá te ahorre lo mismo." — @dakexplica*
+"Son 3 lecciones cortas. Te voy enseñando lo que hace la herramienta por dentro; cuando la uses normal, hace todo esto **sola**."
 
-"En 5 minutos vas a:
-- ver tu página en 15 pantallas a la vez,
-- arreglar lo que se ve mal (sin que toque tu diseño sin preguntarte),
-- y aprender a usarla en todo lo que hagas."
-
-Pregunta: **"¿Qué página te gustaría dejar perfecta y qué te preocupa de cómo se ve?"** (una tienda, su portafolio, la web de su negocio…)
-
-**ALTO.** Reacciona a lo que dijo en una frase y úsalo después ("Una tienda: ahí cada botón cortado es una venta perdida. Vamos a revisarla").
-
-## Paso 0
-
-"Primero reviso que tengas todo lo que necesita. Tarda un segundo."
-
-**ACCIÓN:** corre `python3 <skill>/scripts/paso0.py`.
-- Si todo sale ✓: "Todo listo, no hay que instalar nada." (Celébralo en una línea.)
-- Si falta algo: explícalo en una frase ("Falta Playwright: es lo que abre tu página como si fuera cada celular") y pide permiso para instalarlo. Con su sí, corre `paso0.py --instalar`. **ALTO.**
-
-## Elige la página
-
-"¿Cómo me la pasas? (con botones si se puede)
-1. **El link**: la reviso completa (15 pantallas, capturas, la toco con el dedo), igual que la ve cualquier visitante. Te digo qué falla, pero no puedo cambiarla.
-2. **La carpeta del proyecto** en tu compu: la reviso y además la **arreglo**, porque los cambios se hacen en el código.
-3. **Una de ejemplo** que trae la herramienta (una cafetería inventada con errores a propósito), para practicar sin tocar lo tuyo.
-Nunca necesito tus contraseñas ni tu cuenta donde la publicas."
-
-Si dice "la mía" sin dar nada: "¿Me pasas el link, la carpeta o las dos? Con la carpeta, además de revisarla, la arreglo."
+**BOTONES** · "¿Qué quieres revisar?"
+- **Una página mía** — "la reviso y, si me das la carpeta, la arreglo"
+- **La de ejemplo** — "una cafetería inventada con errores puestos, para practicar sin tocar lo tuyo"
 
 **ALTO.**
 
-## La primera revisión (la pide la persona)
+## 2 · Si eligió una página suya: revisar el acceso (no te lo saltes)
 
-"Ahora pídemelo tú, así aprendes cómo se le habla. Escríbeme algo como:
-**«Revisa mi página en los 15 dispositivos»**"
+**BOTONES** · "¿Tienes el proyecto en esta compu?"
+- **Sí, tengo la carpeta** — "así la reviso y la arreglo"
+- **Solo tengo el link** — "la reviso completa, pero no puedo cambiarla"
 
-**ALTO.** (Si escribe otra cosa parecida, vale: lo importante es que lo pidió.)
+Con **link**: pídelo en una línea y avisa: "Con el link veo todo lo que ve un visitante. Para arreglar necesito la carpeta del proyecto; no necesito contraseñas ni tu cuenta donde la publicas."
 
-**ACCIÓN:** corre la revisión completa (si es la de ejemplo, `<skill>/guia/ejemplo`):
+Con **carpeta**: pide la ruta y **ACCIÓN** — compruébalo tú antes de seguir y dilo en una lista corta:
+- ✓/✗ la carpeta existe y la puedo leer;
+- ✓/✗ encontré la página (el `index.html`, o el proyecto Next/Astro/Vite/Shopify y cómo se abre: `references/stacks.md`);
+- ✓/✗ puedo guardar cambios ahí (crea y borra un archivo de prueba);
+- si tiene git: ¿hay cambios sin guardar? Si sí, **BOTONES** "¿Guardo un respaldo antes de tocar nada? · Sí (recomendado) · No, sigue".
+- si la página tiene login: avisa que se abre una ventana para que entre la persona (nunca escribes su contraseña).
+Si algo falla, dile qué y cómo resolverlo; si no se puede, sigue solo con el link.
+
+**ALTO.**
+
+## 3 · Paso 0 (en silencio si todo está bien)
+
+**ACCIÓN:** `python3 <skill>/scripts/paso0.py`. Si todo ✓: "Ya tienes todo lo que necesita." Si falta algo: una frase de qué es y **BOTONES** "¿Lo instalo? · Sí · No". **ALTO** solo si hubo que preguntar.
+
+## 4 · La primera revisión
+
+"Ahora pídemelo tú, una sola vez, para que veas lo fácil que es. Escribe:
+**revisa mi página en los 15**"
+
+**ALTO.** (Es el único momento de la guía donde se escribe; lo demás es con botones.)
+
+**ACCIÓN:** revisión completa (ejemplo: `<skill>/guia/ejemplo`):
 
 ```bash
-python3 <skill>/scripts/revisar.py <su link o carpeta> --salida /tmp/revision-movil/guia/antes
+python3 <skill>/scripts/revisar.py <link o carpeta> --salida /tmp/revision-movil/guia/antes
 ```
 
-Mientras corre (1–2 min): "La estoy abriendo en 7 celulares, 4 tabletas y 4 compus, como lo haría cada uno. Dame un minuto."
+Mientras corre: "La estoy abriendo en 7 celulares, 4 tabletas y 4 compus. Tarda como un minuto."
 
-**ACCIÓN:** abre `hoja.png` con Read y dale la ruta. Si hay errores, abre también `iphone/marcado.png`.
+**ACCIÓN:** muestra `hoja.png` (Read) y, si hay errores, `iphone/marcado.png`.
 
-"Esta es tu página en las 15 pantallas. Cada recuadro rojo es algo que la gente ve mal en ese aparato."
+Resume así (corto, con estos títulos):
 
-Dile, en una frase cada uno:
-- cuántas pantallas salieron bien y cuántas con problemas;
-- lo más grave, dicho como lo vive la gente ("en el iPhone el título se corta y el botón de reservar no se ve completo"), conectado con lo que le preocupaba;
-- que en la siguiente lección lo arreglan.
+**Resultado**
+- ✓ [N] pantallas bien · ✗ [N] con problemas
+- Lo más grave: [como lo vive la gente: "en el iPhone el título se corta y el botón no se ve completo"]
+- Lo que vi yo mirando (el script no lo marca): [1 cosa, si hay]
 
-"Un secreto: los números no lo ven todo. Por eso además miro las capturas, como lo haría una persona."
+"Por eso miro las capturas además de los números."
 
-## Cierre
+## 5 · Cierre
 
 **Lo que lograste, [nombre]**
-- Dejaste la herramienta lista.
 - Viste tu página como la ve todo el mundo.
-- Ya sabes qué se ve mal y dónde.
+- Sabes qué falla y en qué aparatos.
 
-Despídete con energía: "Ahora viene lo bueno: en la lección 2 lo arreglamos y vas a ver el antes y después lado a lado. ¿Vamos?"
+**BOTONES** · "¿Seguimos? En la 2 lo arreglamos y ves el antes y después lado a lado."
+- **Sí, vamos a la 2**
+- **Lo dejo aquí** — "cuando quieras: «retoma la guía»"
 
-(Si quiere parar: "Va, cuando quieras dime «retoma la guía» y seguimos donde nos quedamos.")
-
-**ALTO.** Guarda el avance: `{"guia_ofrecida": true, "nombre": "...", "leccion": 1, "pagina": "...", "objetivo": "<lo que quiere lograr>"}`.
+**ACCIÓN:** guarda en `~/.dakexplica/dak-revision-movil.json`: `nombre`, `leccion: 1`, `pagina` (ruta o link, o "ejemplo"), `puede_editar` (true/false), `objetivo` (si lo dijo).

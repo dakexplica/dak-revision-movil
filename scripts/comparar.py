@@ -139,6 +139,43 @@ def main():
     lienzo.save(salida / "antes-despues.png")
     print(f"\nImagen: {salida / 'antes-despues.png'}")
 
+    # Imagen clara para explicar a una persona: 4 aparatos clave, cada uno en pareja ANTES | DESPUÉS
+    import json as _j
+    def errores(carp, k):
+        try: return sum(1 for h in _j.loads((carp / k / "datos.json").read_text())["hallazgos"] if h.get("gravedad") == "error")
+        except Exception: return None
+    clave = [k for k in ("iphone", "android-chico", "ipad", "macbook-air") if k in comunes] or comunes[:4]
+    nombres = {"iphone": "iPhone", "android-chico": "Android chico", "ipad": "iPad", "macbook-air": "MacBook Air"}
+    AL, PAD, CAB = 620, 40, 70
+    pares = []
+    for k in clave:
+        fa, fd = A / k / "pantalla.png", D / k / "pantalla.png"
+        if fa.exists() and fd.exists():
+            ims = [Image.open(f).convert("RGB") for f in (fa, fd)]
+            ims = [im.resize((max(1, int(im.width * AL / im.height)), AL)) for im in ims]
+            pares.append((k, ims))
+    if pares:
+        ancho_par = lambda ims: ims[0].width + ims[1].width + 30
+        W2 = max(ancho_par(ims) for _, ims in pares) + PAD * 2
+        H2 = 110 + len(pares) * (AL + CAB + 50)
+        cl = Image.new("RGB", (W2, H2), (244, 245, 247)); d2 = ImageDraw.Draw(cl)
+        d2.text((PAD, 30), "Antes y después", fill=(11, 13, 18), font=fuente(44))
+        y = 110
+        for k, (ia, idp) in pares:
+            d2.text((PAD, y), nombres.get(k, k), fill=(11, 13, 18), font=fuente(30)); y += 44
+            x = PAD
+            for im, txt, col, n in ((ia, "ANTES", (226, 61, 46), errores(A, k)), (idp, "DESPUÉS", (22, 163, 74), errores(D, k))):
+                if n is not None: col = (22, 163, 74) if n == 0 else (226, 61, 46)   # el color dice el resultado, no si es antes o después
+                d2.rounded_rectangle([x - 6, y - 6, x + im.width + 6, y + CAB + im.height + 6], 18, fill=col)
+                etiqueta = f"{txt} · " + ("bien" if n == 0 else f"{n} error" + ("es" if n != 1 else "")) if n is not None else txt
+                tam = 30
+                while tam > 16 and d2.textlength(etiqueta, font=fuente(tam)) > im.width - 24: tam -= 2
+                d2.text((x + 12, y + 18 + (30 - tam) // 2), etiqueta, fill=(255, 255, 255), font=fuente(tam))
+                cl.paste(im, (x, y + CAB)); x += im.width + 30
+            y += AL + CAB + 50
+        cl.save(salida / "antes-despues-claro.png")
+        print(f"Imagen clara (4 aparatos): {salida / 'antes-despues-claro.png'}")
+
 
 if __name__ == "__main__":
     main()

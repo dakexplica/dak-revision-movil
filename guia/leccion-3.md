@@ -1,58 +1,76 @@
-# Lección 3 · Sácale más (1–2 min)
+# Lección 3 · Que funcione con el dedo (~2 min)
 
-> Guion para Claude. Antes, lee `guia/estilo.md`. Retoma nombre y página de `~/.dakexplica/dak-revision-movil.json`. **ACCIÓN** = lo haces tú. **ALTO** = esperas la respuesta.
+> Guion para Claude. Antes lee `guia/estilo.md` y retoma `nombre` y `pagina` de `~/.dakexplica/dak-revision-movil.json`. **ACCIÓN** = lo haces tú. **BOTONES** = `AskUserQuestion`. **ALTO** = esperas.
 
-**ACCIÓN:** muestra este banner en un bloque de código:
+## 1 · Abre
+
+**ACCIÓN:** banner:
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   REVISIÓN EN 15 PANTALLAS  ·  guía 3 de 3
-   Que funcione con el dedo (y usarla en todo)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  REVISIÓN EN 15 PANTALLAS
+  ▰▰▰  Lección 3 de 3 · Que funcione con el dedo
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-"Última, [nombre], y es la que más me gusta."
+"Última, [nombre]. Que se vea bien no basta: también tiene que funcionar con el dedo. Ahí es donde casi todas fallan."
 
-"Que se vea bien no basta: también tiene que funcionar con el dedo. Ahí es donde la mayoría de las páginas falla sin que nadie se dé cuenta."
+**BOTONES** · "¿Qué pruebo como si fuera una persona?"
+- **Todo: bajar hasta el final, tocar el botón principal y girar el celular (recomendado)**
+- **Solo bajar hasta el final**
 
-"Escríbeme: **«Úsala como una persona: baja hasta el final y toca el botón principal»**." **ALTO.**
+**ALTO.**
 
-**ACCIÓN:** escribe un `pasos.json` corto para su página (o la de ejemplo) y córrelo en el grupo rápido:
+## 2 · Probar con el dedo
+
+**ACCIÓN:** arma un `pasos.json` corto con lo que eligió y córrelo en los 4 rápidos:
 
 ```json
-[{"recorrer": true}, {"tocar_texto": "<el botón principal, p. ej. Pedir en línea ahora>"}, {"rotar": true}]
+[{"recorrer": true}, {"tocar_texto": "<botón principal>"}, {"rotar": true}]
 ```
 
 ```bash
 python3 <skill>/scripts/tocar.py <la página> --pasos pasos.json --dispositivos rapido --salida /tmp/revision-movil/guia/tocar
 ```
 
-Cuéntale el resultado en una frase por dispositivo (✓ o qué falló y por qué: "tapado por el banner", "el scroll se atora").
+**Resultado** (una línea por aparato, ✓ o qué falló y por qué: "tapado por el banner", "el scroll se atora").
 
-"Tres usos que vale la pena conocer:"
-1. **Mientras construyes:** dile a Claude «antes de terminar, revísalo con dak-revision-movil». Así lo descubre él y no tus clientes.
-2. **Videos e imágenes:** «revisa este video para Reels» revisa formato 9:16, zonas que tapa la app, peso para WhatsApp y web.
-3. **Una pantalla concreta:** si en tu celular algo se ve raro, mándale la captura y dile «arréglalo»: lo reproduce en ese mismo aparato.
+Si es la de ejemplo: "Aquí los botones son de mentira; en tu página real esta prueba también te dice si un botón quedó tapado o si el scroll se atora a media página. Eso nadie lo ve desde la compu."
 
-"Errores comunes, para que no te pasen:"
-- Revisar solo la portada: revisa también producto, carrito o formulario (se pide así: «revisa también /contacto»).
-- Creerle solo a los números: la skill mira las capturas porque hay cosas que solo se ven mirando.
-- Publicar sin volver a revisar en el link real: después de subir, pide «revísalo en el link de producción».
+## 3 · Así la usas de aquí en adelante (lo más importante)
 
-**Mejoras opcionales** (la skill funciona sin ellas; pregunta antes de instalar nada):
-- **Safari de verdad (solo Mac con Xcode):** prueba en el iPhone y iPad del Simulador, con el Safari real. «Pruébalo en Safari real.»
-- **ffmpeg:** para revisar videos. Si no lo tiene, dale el comando de su sistema (macOS `brew install ffmpeg` · Windows `winget install ffmpeg`).
+"Todo lo que hicimos paso a paso, la herramienta lo hace **sola**. No tienes que pedirle cada cosa. Le dices una frase y ella:
+1. abre tu página en las 15 pantallas,
+2. mira las capturas (no solo los números),
+3. la prueba con el dedo,
+4. arregla lo obvio,
+5. te pregunta lo que cambia tu diseño,
+6. y te enseña el antes y después."
 
-Cierra con:
+**Frases para usarla** (muéstralas así, para copiar):
+- **revisa mi página en todos los dispositivos** — lo de arriba, completo
+- **antes de terminar, revísalo con dak-revision-movil** — mientras construyes algo
+- **revisa este video para Reels** — formato, lo que tapa la app y el peso
+- (con una captura de tu celular) **esto se ve mal, arréglalo**
+
+**Para que no te pase:**
+- Revisa también las otras páginas, no solo la portada ("revisa también /contacto").
+- Después de publicar, revisa el link real ("revísalo en el link de producción").
+
+**BOTONES** · "¿Quieres las mejoras opcionales?" (solo las que no tenga; pregunta antes de instalar)
+- **Safari de verdad** — en Mac con Xcode: el iPhone y el iPad del Simulador con el Safari real
+- **Revisar videos** — necesita ffmpeg
+- **No, así está bien**
+
+## 4 · Cierre
 
 **Lo que lograste, [nombre]**
-- Revisar en 15 pantallas, mirar y tocar.
-- Arreglar lo obvio y decidir tú lo que cambia el diseño.
-- Usarla mientras construyes, con videos y con capturas.
+- Ver tu página como la ve todo el mundo.
+- Arreglarla sin perder tu diseño.
+- Comprobar que funcione con el dedo.
 
-Despídete con cariño y energía, retomando lo de la lección 1 ("Tu [tienda] ya se ve bien en los 15, y ahora sabes revisarla tú cuando cambies algo").
+Despídete con energía y retoma lo de la lección 1 ("Tu [tienda] ya se ve bien en todos lados, y ahora con una frase la revisas cada vez que cambies algo").
 
-"Listo, ya la dominas. Si quieres repetir algo: «guía lección 1», «guía lección 2» o «guía lección 3».
-Esta herramienta es de **@dakexplica**: sígueme para la siguiente. Las demás están gratis en el link de mi perfil."
+"Esta herramienta es de **@dakexplica**: sígueme para la siguiente. Las demás están gratis en el link de mi perfil. ¿Quieres repetir algo? «guía lección 1», «2» o «3»."
 
-**ACCIÓN:** guarda `"leccion": 3, "terminada": true` en `~/.dakexplica/dak-revision-movil.json`. Si se usó la página de ejemplo, borra `/tmp/revision-movil/guia/`.
+**ACCIÓN:** guarda `leccion: 3, terminada: true`. Si usaste copia de práctica, bórrala (`/tmp/revision-movil/guia/`).
