@@ -13,7 +13,7 @@
 
 "Última, [nombre], y es la que más me gusta."
 
-"Que se vea bien no basta: también tiene que funcionar. Ahora la uso como una persona: bajo con el dedo hasta el final y toco el botón principal."
+"Que se vea bien no basta: también tiene que funcionar con el dedo. Ahí es donde la mayoría de las páginas falla sin que nadie se dé cuenta."
 
 "Escríbeme: **«Úsala como una persona: baja hasta el final y toca el botón principal»**." **ALTO.**
 
