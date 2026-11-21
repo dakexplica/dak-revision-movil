@@ -23,6 +23,8 @@
 
 ## 2 · Probar con el dedo
 
+**Antes, avisa:** "Va. Ahora la uso como una persona en 4 aparatos: [lo que eligió]. Tarda unos segundos."
+
 **ACCIÓN:** arma un `pasos.json` corto con lo que eligió y córrelo en los 4 rápidos:
 
 ```json
@@ -32,6 +34,8 @@
 ```bash
 python3 <skill>/scripts/tocar.py <la página> --pasos pasos.json --dispositivos rapido --salida /tmp/revision-movil/guia/tocar
 ```
+
+**Después, el mensaje (obligatorio):** "Listo, la probé con el dedo. Esto pasó:"
 
 **Resultado** (una línea por aparato, ✓ o qué falló y por qué: "tapado por el banner", "el scroll se atora").
 

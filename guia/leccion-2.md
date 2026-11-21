@@ -36,6 +36,8 @@ Si `puede_editar` es false (solo link): "Con el link no puedo cambiar tu página
 
 ## 4 · Comprobar
 
+**Antes, avisa:** "Ya arreglé. Ahora la vuelvo a medir en 4 aparatos (iPhone, Android, iPad y Mac) para comprobar que quedó bien. Son unos segundos."
+
 **ACCIÓN:** vuelve a medir en los 4 aparatos clave (rápido) y compara:
 
 ```bash
@@ -51,13 +53,15 @@ python3 <skill>/scripts/comparar.py /tmp/revision-movil/guia/antes /tmp/revision
 
 Si salió algo **NUEVO** (un arreglo que rompió otra cosa), dilo y arréglalo antes de seguir.
 
-## 5 · Cierre
+## 5 · Cierre (MENSAJE obligatorio, antes de los botones)
 
-**Lo que lograste, [nombre]**
-- Arreglaste lo obvio sin tocar tu diseño.
-- Decidiste tú lo que sí lo cambiaba.
+> **Lo que lograste, [nombre]**
+> - Arreglaste lo obvio sin tocar tu diseño: [los arreglos, en una línea].
+> - Decidiste tú lo que sí lo cambiaba: [lo que eligió].
+>
+> **Lo que sigue:** en la lección 3 la uso como una persona con el dedo (bajo hasta el final, toco el botón principal, giro el celular). Ahí es donde casi todas fallan sin que nadie se dé cuenta.
 
-**BOTONES** · "¿Última? En la 3 vemos que funcione con el dedo, que es donde casi todas fallan sin que nadie se dé cuenta."
+**BOTONES** (después del mensaje) · "¿Vamos a la última?"
 - **Sí, vamos a la 3**
 - **Lo dejo aquí**
 
