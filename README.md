@@ -28,6 +28,11 @@ npx skills add dakexplica/dak-revision-movil
 
 **En la app de Claude:** descarga el `.zip` de la última versión (Releases, a la derecha) y súbelo en **Configuración → Capacidades → Skills → Subir skill**.
 
+## Actualizaciones
+Esta skill **no se actualiza sola**, pero te avisa. Cuando empiezas a usarla, mira (en silencio, máximo una vez al día) si hay una versión nueva en este repositorio. **Si no la hay, no dice nada.** Si la hay, al final de lo que le pediste te avisa en una línea y te pregunta si la actualiza; si dices «ahora no», no vuelve a mencionar esa versión. Nunca descarga nada sin tu permiso. Lo que cambia en cada versión está en [CHANGELOG.md](CHANGELOG.md).
+
+También puedes actualizarla tú cuando quieras: vuelve a correr `npx skills add dakexplica/dak-revision-movil`, o descarga el `.zip` más reciente en **Releases**.
+
 ## Comprueba que funciona
 
 ```

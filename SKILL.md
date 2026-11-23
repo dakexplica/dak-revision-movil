@@ -37,6 +37,15 @@ Revisa Python 3.9+, Playwright, el navegador Chromium de Playwright, Pillow y ff
 - Aunque la abran con «empieza la guía», el primer mensaje es igual la bienvenida de la lección 1.
 - La guía son 3 lecciones cortas en `guia/`. Cada una es un guion para Claude (lo que dices, **ACCIÓN** y **ALTO**). **Antes de cada lección lee `guia/estilo.md`**: se da en vivo (saludo con su nombre, reaccionas a lo que dice, seguimiento entre lecciones), nunca seca. Nunca sigas sin que la persona conteste.
 
+## Aviso de versión nueva (silencioso)
+
+Al empezar (junto con el Paso 0), corre **sin decir nada** `python3 <skill>/scripts/version.py`. Casi siempre no imprime nada y entonces **no digas ni una palabra del tema**: esta revisión no existe para la persona. Solo imprime si hay una versión más nueva en el repo oficial `dakexplica/dak-revision-movil`, así: `NUEVA 1.1.0 | qué cambió`. Revisa como máximo una vez al día y, sin internet, se calla.
+
+Si imprimió una línea `NUEVA …`: haz primero el trabajo que te pidieron y, **al final de tu respuesta, en una sola línea**, avisa («Por cierto: hay una versión nueva de Revisión en 15 pantallas (1.1.0: qué cambió). ¿La actualizo?») con botones **Sí, actualízala** / **Ahora no** (si no existe la herramienta de botones: «responde 1 o 2»).
+- **Sí:** dile en una frase qué vas a hacer y actualiza solo desde el repo oficial. Con Claude Code: `npx skills add dakexplica/dak-revision-movil` (vuelve a instalar la última versión). Si eso no se puede o la instalaron con el .zip en la app de Claude: dile que descargue el `.zip` nuevo en github.com/dakexplica/dak-revision-movil/releases y lo suba en Configuración → Capacidades → Skills. Nunca instales ni descargues otra cosa.
+- **Ahora no:** corre `python3 <skill>/scripts/version.py --omitir <versión>` y no vuelvas a mencionar esa versión (sí la siguiente).
+- Nunca interrumpas una guía ni un trabajo en curso con este aviso.
+
 ## La regla de oro: medir, MIRAR, tocar, arreglar, volver a medir
 
 Los números solos mienten. En una prueba, un 3D de camisetas sacó **0 errores medidos en los 15 dispositivos**, y en las capturas de celular se veía cortado a la derecha, con las camisetas chiquitas y fuera de centro. Lo medible (desbordes, botones chicos, letra chica) lo encuentra el script; lo que "se ve mal" solo lo encuentras **mirando las capturas tú mismo**, y lo que "no funciona" solo lo encuentras **tocando**. Las tres cosas, siempre.
@@ -183,6 +192,8 @@ Si un aviso viene del tema o de la plantilla base y no de lo que se construyó, 
 | Archivo | Para qué |
 |---|---|
 | `scripts/paso0.py` | Revisa lo que necesita la skill y, con permiso, instala lo que falta |
+| `scripts/version.py` | Aviso silencioso de versión nueva (solo habla si hay una; `--omitir X` = «ahora no») |
+| `version.json` · `CHANGELOG.md` | La versión instalada y qué cambió en cada una |
 | `scripts/revisar.py` | Medir en 15 dispositivos: capturas, problemas, informe |
 | `scripts/auditoria.js` | Lo que se mide dentro de la página (lo usa revisar.py) |
 | `scripts/tocar.py` | Usar la página con el dedo / ratón y ver qué falla |
