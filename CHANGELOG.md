@@ -1,5 +1,8 @@
 # Qué cambió
 
+## 1.0.4
+- Más ligera: revisar si hay versión nueva ya no agrega ningún paso (lo hacen los scripts al terminar, máximo una vez al día; si no hay versión nueva, no dice nada).
+
 ## 1.0.3
 - Más confiable: el aviso de versión nueva sale en cada uso (lo revisan los propios scripts al terminar, no solo la primera vez).
 - Las revisiones de imágenes y videos ya no fallan con «falta Pillow» cuando sí está instalado.
