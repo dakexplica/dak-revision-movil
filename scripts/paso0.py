@@ -8,7 +8,26 @@ Necesita: Python 3.9+, Playwright (para abrir la página como cada dispositivo),
 Chromium y Pillow (para las capturas). ffmpeg solo hace falta para revisar videos. Xcode solo
 para la prueba opcional en Safari real (Mac).
 """
+import site as _site, sys as _sys
+if _site.getusersitepackages() not in _sys.path:  # que encuentre lo que instaló el Paso 0, aunque corran python3 -I
+    _sys.path.append(_site.getusersitepackages())
 import importlib.util, shutil, subprocess, sys
+import atexit, os
+
+
+def _aviso_version():
+    """Al terminar, revisa en silencio si hay versión nueva de la skill (máx. 1 vez al día)."""
+    try:
+        ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "version.py")
+        spec = importlib.util.spec_from_file_location("dak_version", ruta)
+        modulo = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(modulo)
+        modulo.avisar()
+    except Exception:
+        pass
+
+
+atexit.register(_aviso_version)
 
 instalar = '--instalar' in sys.argv
 faltan = []

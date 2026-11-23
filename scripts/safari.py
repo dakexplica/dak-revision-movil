@@ -18,6 +18,9 @@ Uso:
   prendidos, quizá por otra sesión, se quedan como estaban).
 - Safari del simulador guarda sus pestañas entre sesiones: puede haber pestañas de otro proyecto.
 """
+import site as _site, sys as _sys
+if _site.getusersitepackages() not in _sys.path:  # que encuentre lo que instaló el Paso 0, aunque corran python3 -I
+    _sys.path.append(_site.getusersitepackages())
 import argparse
 import re
 import subprocess

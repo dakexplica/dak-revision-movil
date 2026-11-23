@@ -1,5 +1,9 @@
 # Qué cambió
 
+## 1.0.3
+- Más confiable: el aviso de versión nueva sale en cada uso (lo revisan los propios scripts al terminar, no solo la primera vez).
+- Las revisiones de imágenes y videos ya no fallan con «falta Pillow» cuando sí está instalado.
+
 ## 1.0.2
 - El aviso de versión nueva llega al momento: ya no ve la copia de hace unos minutos que guarda GitHub.
 

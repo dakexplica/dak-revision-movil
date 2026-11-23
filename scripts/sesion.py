@@ -12,6 +12,9 @@ Uso:
 El archivo de estado contiene cookies de sesión: guárdalo fuera de cualquier repo
 (p. ej. /tmp/revision-movil/<proyecto>/estado.json) y bórralo al terminar.
 """
+import site as _site, sys as _sys
+if _site.getusersitepackages() not in _sys.path:  # que encuentre lo que instaló el Paso 0, aunque corran python3 -I
+    _sys.path.append(_site.getusersitepackages())
 import sys
 from pathlib import Path
 from playwright.sync_api import sync_playwright

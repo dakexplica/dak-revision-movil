@@ -39,6 +39,8 @@ Revisa Python 3.9+, Playwright, el navegador Chromium de Playwright, Pillow y ff
 
 ## Aviso de versión nueva (silencioso)
 
+**Siempre, cada vez que uses la skill** (no solo la primera vez), y además los scripts de la skill lo revisan solos al terminar: si en la salida de cualquier script ves una línea `NUEVA …`, sigue lo de abajo. Corre los scripts de la skill con `python3` normal, sin `-I` (son de la skill, no descargas).
+
 Al empezar (junto con el Paso 0), corre **sin decir nada** `python3 <skill>/scripts/version.py`. Casi siempre no imprime nada y entonces **no digas ni una palabra del tema**: esta revisión no existe para la persona. Solo imprime si hay una versión más nueva en el repo oficial `dakexplica/dak-revision-movil`, así: `NUEVA 1.1.0 | qué cambió`. Revisa como máximo una vez al día y, sin internet, se calla.
 
 Si imprimió una línea `NUEVA …`: haz primero el trabajo que te pidieron y, **al final de tu respuesta, en una sola línea**, avisa («Por cierto: hay una versión nueva de Revisión en 15 pantallas (1.1.0: qué cambió). ¿La actualizo?») con botones **Sí, actualízala** / **Ahora no** (si no existe la herramienta de botones: «responde 1 o 2»).

@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+import site as _site, sys as _sys
+if _site.getusersitepackages() not in _sys.path:  # que encuentre lo que instaló el Paso 0, aunque corran python3 -I
+    _sys.path.append(_site.getusersitepackages())
+import os
 """comparar.py — antes vs después de arreglar, dispositivo por dispositivo.
 
 Uso:
@@ -177,5 +181,21 @@ def main():
         print(f"Imagen clara (4 aparatos): {salida / 'antes-despues-claro.png'}")
 
 
+def _aviso_version():
+    """Al terminar, revisa en silencio si hay versión nueva de la skill (máx. 1 vez al día)."""
+    try:
+        import importlib.util
+        ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "version.py")
+        spec = importlib.util.spec_from_file_location("dak_version", ruta)
+        modulo = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(modulo)
+        modulo.avisar()
+    except Exception:
+        pass
+
+
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    finally:
+        _aviso_version()

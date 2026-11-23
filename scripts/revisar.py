@@ -29,6 +29,9 @@ Uso:
 
 Siempre termina con código 0: un "error" aquí es un hallazgo, no una falla del script.
 """
+import site as _site, sys as _sys
+if _site.getusersitepackages() not in _sys.path:  # que encuentre lo que instaló el Paso 0, aunque corran python3 -I
+    _sys.path.append(_site.getusersitepackages())
 import argparse
 import datetime as dt
 import functools
@@ -587,5 +590,21 @@ def main():
     print("\nListo. Lee el informe y MIRA las capturas: los números no ven si algo se ve encimado o feo.")
 
 
+def _aviso_version():
+    """Al terminar, revisa en silencio si hay versión nueva de la skill (máx. 1 vez al día)."""
+    try:
+        import importlib.util
+        ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "version.py")
+        spec = importlib.util.spec_from_file_location("dak_version", ruta)
+        modulo = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(modulo)
+        modulo.avisar()
+    except Exception:
+        pass
+
+
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    finally:
+        _aviso_version()

@@ -64,7 +64,20 @@ def main():
         return                                   # al día: no se dice nada
     if est.get('version_omitida') == str(remoto.get('version')):
         return                                   # dijo «ahora no» a esta versión
-    print(f"NUEVA {remoto['version']} | {str(remoto.get('novedades', '')).strip()[:200]}")
+    print(f"\nNUEVA {remoto['version']} | {str(remoto.get('novedades', '')).strip()[:200]}"
+          " (aviso de versión: haz lo que te pidieron y al final pregunta si la actualiza; ver SKILL.md)")
+
+
+def avisar():
+    """Lo llaman los scripts principales al terminar: así el aviso no depende de acordarse de correrlo."""
+    guardado = sys.argv
+    try:
+        sys.argv = [guardado[0]]
+        main()
+    except Exception:
+        pass
+    finally:
+        sys.argv = guardado
 
 
 if __name__ == '__main__':

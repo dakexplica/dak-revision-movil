@@ -1,6 +1,6 @@
 {
   "skill": "dak-revision-movil",
   "repo": "dakexplica/dak-revision-movil",
-  "version": "1.0.2",
-  "novedades": "El aviso de versión nueva llega al momento, sin esperar."
+  "version": "1.0.3",
+  "novedades": "Más confiable: avisa de versiones nuevas en cada uso y encuentra siempre las herramientas que instaló el Paso 0."
 }
