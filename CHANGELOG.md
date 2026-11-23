@@ -1,5 +1,9 @@
 # Qué cambió
 
+## 1.0.5
+- Si tu página ya se ve bien en las 15, te lo dice (no inventa problemas) y la guía te enseña a arreglar con la página de ejemplo.
+- Qué hace si solo tienes el link (Wix, Squarespace, editor de Shopify), si usas Windows, si la Mac pide herramientas de desarrollo o si estás en la app de Claude.
+
 ## 1.0.4
 - Más ligera: revisar si hay versión nueva ya no agrega ningún paso (lo hacen los scripts al terminar, máximo una vez al día; si no hay versión nueva, no dice nada).
 

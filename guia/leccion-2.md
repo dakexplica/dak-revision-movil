@@ -17,6 +17,8 @@ Cuando diga «sigue»: copia la página de práctica y prepara los arreglos obvi
 
 "Bien, [nombre]. Ya vimos que [lo más grave de la lección 1]. [Retoma su `objetivo`: "Y como lo que más te preocupaba era que se viera cortado, empezamos por ahí."] Vamos a arreglarlo."
 
+**Si su página salió bien en las 15** (0 problemas en la lección 1): no inventes arreglos. Celébralo y avisa en una línea: **"Tu página ya se ve bien en las 15 pantallas, ¡bien hecha! Para que veas cómo arregla cuando algo falla, lo hacemos con la de ejemplo; la tuya no la toco."** y sigue con la de ejemplo.
+
 Si `puede_editar` es false (solo link): "Con el link no puedo cambiar tu página. Te dejo la lista de cambios para quien la lleve y seguimos con la de ejemplo para que veas cómo se arregla." Entrega la lista (corta) y sigue con el ejemplo.
 
 ## 2 · Las dos reglas de la herramienta

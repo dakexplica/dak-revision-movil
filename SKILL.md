@@ -11,7 +11,7 @@ Construyes en la compu y luego, en el celular, descubres uno por uno lo que est�
 
 **Habla en español, claro y sin tecnicismos.** Explica qué veía la gente y qué ve ahora, no qué propiedad de CSS cambiaste.
 
-Las rutas de abajo usan `<skill>` = la carpeta donde está instalada esta skill (normalmente `~/.claude/skills/dak-revision-movil`).
+Las rutas de abajo usan `<skill>` = la carpeta donde está instalada esta skill (normalmente `~/.claude/skills/dak-revision-movil`). **En Windows** el comando suele ser `python` o `py` en lugar de `python3`: usa el que exista.
 
 ## Primera vez · Paso 0 y mini guía
 
@@ -213,3 +213,18 @@ Si un aviso viene del tema o de la plantilla base y no de lo que se construyó, 
 | `references/stacks.md` | Cómo servir/probar cada tipo de proyecto |
 | `references/safari-real.md` | Pase final en Safari real con el Simulador de iOS |
 | `references/videos-y-archivos.md` | Videos, imágenes y PDFs para celular |
+
+## Situaciones de alguien nuevo (revisadas antes de publicar)
+
+| Situación | Qué hace la skill |
+|---|---|
+| La instala en un chat vacío y no tiene página propia | La guía ofrece la página de ejemplo (una cafetería con errores puestos) y con eso enseña todo |
+| Su página ya se ve bien en las 15 | No inventa problemas: lo celebra y, para enseñar cómo arregla, usa la de ejemplo sin tocar la suya |
+| Solo tiene el link (Wix, Squarespace, editor de Shopify, o no tiene el código) | Revisa todo; como no puede editar, le da la lista de cambios en palabras simples y dónde se hacen en su editor (o para mandársela a quien la lleve) |
+| Pide «revisa mi página» sin decir cuál | Le pide el link o la carpeta en una línea y le ofrece la de ejemplo |
+| No tiene Playwright ni el navegador | El Paso 0 le explica qué es cada cosa y pide permiso antes de instalar (~150 MB, un par de minutos) |
+| Mac nueva: al correr `python3` la Mac pide "herramientas de desarrollo" | Le explica que es normal, que acepte la instalación de Apple (gratis, unos minutos) y que avise cuando termine; luego sigue con el Paso 0 |
+| Windows | Usa `python` o `py` si no existe `python3`; el Safari real no aplica (es solo de Mac) y se lo dice |
+| Usa la app de Claude (claude.ai), no Claude Code | Le dice claro que la revisión en 15 pantallas necesita Claude Code (abre navegadores en su compu). Lo que sí puede ahí: revisar una captura o imagen que suba (`revisar_archivo.py`, si su chat permite correr código) |
+| Su página tiene login | Se abre una ventana para que entre la persona; Claude nunca escribe su contraseña |
+| Sin internet | Puede revisar archivos o una carpeta de su compu si ya tiene todo instalado; no puede instalar ni abrir páginas en línea |
