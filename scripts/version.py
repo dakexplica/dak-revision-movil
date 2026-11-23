@@ -32,6 +32,8 @@ def main():
         return                                   # sin version.json no hay nada que revisar
     if '--estado' in sys.argv:
         print(f"{local.get('skill')} {local.get('version')}"); return
+    if os.path.isdir(os.path.join(RAIZ, '.git')) and not os.environ.get('DAK_VERSION_URL'):
+        return                                   # copia del autor (es el repo): nunca se avisa ni se actualiza encima
     ruta = os.path.expanduser(f"~/.dakexplica/{local['skill']}.json")
     try:
         est = json.load(open(ruta, encoding='utf-8'))
