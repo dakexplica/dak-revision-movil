@@ -1,5 +1,8 @@
 # Qué cambió
 
+## 1.0.2
+- El aviso de versión nueva llega al momento: ya no ve la copia de hace unos minutos que guarda GitHub.
+
 ## 1.0.1
 - Actualizar ahora es un solo paso y más seguro: Claude usa el comando exacto, comprueba que quedó la versión nueva y nunca actualiza encima de la copia original de quien hizo la skill.
 
